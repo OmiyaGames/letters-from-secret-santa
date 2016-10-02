@@ -1,0 +1,38 @@
+﻿FONTLOG for the vSHandprintedFontFamily fonts
+
+This file provides detailed information on the vSHandprintedFontFamily Font Software.
+This information should be distributed along with the vSHandprintedFontFamily fonts
+and any derivative works.
+
+Basic Font Information
+
+vSHandprintedFontFamily is a Unicode typeface family that supports all languages that
+use the Latin script and its variants, and could be expanded to support other
+scripts.
+
+More specifically, this release supports the following Unicode ranges U+0000 – U+007F and U+00A1 – U+00FF.  (ISO8859-1)
+This release contains all of the vector graphic tracings in .SVG format of the original glyph scans as well as the fontforge 2.0 source codes in .SFD format.
+
+To contribute to the project please feel free to expand the font codings to include other languages beyond the Latin based languages, follow all of the terms of the SIL OFL v1.1 LICENSE. 
+
+ChangeLog
+
+1 October 2012 (T.B. von Strong) vSHandprintedFontFamily version 1.0.1
+- Tweaked size of the punctuation marks which were out of scale and way too small to be seen.
+- Put the finishing touches on the package for initial release: Created Samples, collected source files, created the zip.
+
+27 September 2012 (T.B. von Strong) Began the steady process of creating the vSHanprintedFontFamily with a red ball point pen and photocopy paper; then a scanner, and a computer.
+
+
+Acknowledgements
+
+If you make modifications be sure to add your name (N), email (E), web-address
+(if you have one) (W) and description (D). This list is in alphabetical order.
+
+N: T.B. von Strong
+E: tstrong2@gmail.com
+W: http://facebook.com/ThomasvonStrong
+D: Designer of vSHandprintedFontFamily and coder of the original Latin Characters of handwritten font. 
+
+
+
