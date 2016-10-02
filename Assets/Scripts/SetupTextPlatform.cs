@@ -75,7 +75,7 @@ public class SetupTextPlatform : MonoBehaviour
 	public void SetupCentralCollider()
 	{
 		// Resize the box collider
-        SetupCentralColliderStatic(CachedCollider, renderer, transform, padding, offset);
+        SetupCentralColliderStatic(CachedCollider, GetComponent<Renderer>(), transform, padding, offset);
 	}
 
     [ContextMenu("Setup Edge Collider")]
@@ -90,7 +90,7 @@ public class SetupTextPlatform : MonoBehaviour
         Vector3 rendererExtents = /*transform.rotation * */textRenderer.bounds.extents;
 
         // Resize the box collider
-        centralCollider.center = new Vector3((rendererExtents.x - (rendererSize.x / 2f)) + colliderOffset.x,
+        centralCollider.offset = new Vector3((rendererExtents.x - (rendererSize.x / 2f)) + colliderOffset.x,
                                          (rendererExtents.y - (rendererSize.y / 2f)) + colliderOffset.y,
                                          textTransform.position.z);
         centralCollider.size = new Vector3(rendererSize.x + colliderPadding.x, rendererSize.y + colliderPadding.y, 1);
@@ -100,9 +100,9 @@ public class SetupTextPlatform : MonoBehaviour
     {
         // Resize the sliders
         float sliderDimension = centralCollider.size.y;
-        leftSlider.center = centralCollider.center;
+        leftSlider.offset = centralCollider.offset;
         leftSlider.size = new Vector2(sliderWidth, sliderDimension);
-        rightSlider.center = leftSlider.center;
+        rightSlider.offset = leftSlider.offset;
         rightSlider.size = leftSlider.size;
 
         // Position the edge sliders
@@ -112,9 +112,9 @@ public class SetupTextPlatform : MonoBehaviour
 
         // Resize the sliders
         sliderDimension = centralCollider.size.x;
-        topSlider.center = centralCollider.center;
+        topSlider.offset = centralCollider.offset;
         topSlider.size = new Vector2(sliderDimension, sliderWidth);
-        bottomSlider.center = topSlider.center;
+        bottomSlider.offset = topSlider.offset;
         bottomSlider.size = topSlider.size;
 
         // Position the edge sliders

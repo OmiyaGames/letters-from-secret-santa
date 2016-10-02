@@ -38,7 +38,7 @@ public class Restarter : MonoBehaviour
     public void SetupCentralCollider()
     {
         // Resize the box collider
-        SetupTextPlatform.SetupCentralColliderStatic(CachedCollider, renderer, transform, padding, offset);
+        SetupTextPlatform.SetupCentralColliderStatic(CachedCollider, GetComponent<Renderer>(), transform, padding, offset);
         CachedCollider.isTrigger = false;
     }
 #endif

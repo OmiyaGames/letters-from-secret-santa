@@ -196,8 +196,8 @@ public class Platformer2DUserControl : MonoBehaviour
         ParticleSystem[] allParticles = teleportParticles.GetComponentsInChildren<ParticleSystem>();
         foreach (ParticleSystem particle in allParticles)
         {
-            particle.renderer.sortingLayerID = characterRenderer.sortingLayerID;
-            particle.renderer.sortingOrder = characterRenderer.sortingOrder;
+            particle.GetComponent<Renderer>().sortingLayerID = characterRenderer.sortingLayerID;
+            particle.GetComponent<Renderer>().sortingOrder = characterRenderer.sortingOrder;
         }
         teleportParticles.Stop();
 

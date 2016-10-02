@@ -12,7 +12,7 @@ public class ScrollTexture : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-        scrollingMaterial = renderer.material;
+        scrollingMaterial = GetComponent<Renderer>().material;
 	}
 	
 	// Update is called once per frame

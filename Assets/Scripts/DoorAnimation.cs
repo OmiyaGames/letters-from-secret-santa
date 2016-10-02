@@ -71,8 +71,8 @@ public class DoorAnimation : MonoBehaviour
             {
                 // Draw the location
                 platformColliderPosition = affectedTransform.transform.InverseTransformPoint(platform.transform.position);
-                platformColliderPosition.x += platform.CachedCollider.center.x;
-                platformColliderPosition.y += platform.CachedCollider.center.y;
+                platformColliderPosition.x += platform.CachedCollider.offset.x;
+                platformColliderPosition.y += platform.CachedCollider.offset.y;
                 Gizmos.DrawWireCube(platformColliderPosition, platform.CachedCollider.size);
             }
             Restarter[] allDeathTraps = affectedTransform.GetComponentsInChildren<Restarter>();
@@ -80,8 +80,8 @@ public class DoorAnimation : MonoBehaviour
             {
                 // Draw the location
                 platformColliderPosition = affectedTransform.transform.InverseTransformPoint(deathTraps.transform.position);
-                platformColliderPosition.x += deathTraps.CachedCollider.center.x;
-                platformColliderPosition.y += deathTraps.CachedCollider.center.y;
+                platformColliderPosition.x += deathTraps.CachedCollider.offset.x;
+                platformColliderPosition.y += deathTraps.CachedCollider.offset.y;
                 Gizmos.DrawWireCube(platformColliderPosition, deathTraps.CachedCollider.size);
             }
 
@@ -91,8 +91,8 @@ public class DoorAnimation : MonoBehaviour
             {
                 // Draw the location
                 platformColliderPosition = affectedTransform.transform.InverseTransformPoint(slots.transform.position);
-                platformColliderPosition.x += slots.CachedCollider.center.x;
-                platformColliderPosition.y += slots.CachedCollider.center.y;
+                platformColliderPosition.x += slots.CachedCollider.offset.x;
+                platformColliderPosition.y += slots.CachedCollider.offset.y;
                 Gizmos.DrawWireCube(platformColliderPosition, slots.CachedCollider.size);
             }
 

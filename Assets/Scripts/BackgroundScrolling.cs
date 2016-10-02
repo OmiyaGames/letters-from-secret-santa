@@ -13,7 +13,7 @@ public class BackgroundScrolling : MonoBehaviour
     void Start()
     {
         meshPosition = transform.position;
-        backgroundMaterial = renderer.material;
+        backgroundMaterial = GetComponent<Renderer>().material;
     }
 
 	// Update is called once per frame

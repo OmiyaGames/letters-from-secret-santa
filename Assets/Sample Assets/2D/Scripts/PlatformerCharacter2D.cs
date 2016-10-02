@@ -85,7 +85,7 @@ public class PlatformerCharacter2D : MonoBehaviour
 		anim.SetBool("Ground", IsGrounded);
 
 		// Set the vertical animation
-		anim.SetFloat("vSpeed", rigidbody2D.velocity.y);
+		anim.SetFloat("vSpeed", GetComponent<Rigidbody2D>().velocity.y);
 	}
 
 
@@ -99,7 +99,7 @@ public class PlatformerCharacter2D : MonoBehaviour
 			anim.SetFloat("Speed", moveAbs);
 
 			// Move the character
-			rigidbody2D.velocity = new Vector2(move * maxSpeed, rigidbody2D.velocity.y);
+			GetComponent<Rigidbody2D>().velocity = new Vector2(move * maxSpeed, GetComponent<Rigidbody2D>().velocity.y);
 			
 			// If the input is moving the player right and the player is facing left...
 			if(move > 0 && !facingRight)
@@ -118,7 +118,7 @@ public class PlatformerCharacter2D : MonoBehaviour
             {
                 // Add a vertical force to the player.
                 anim.SetBool("Ground", false);
-                rigidbody2D.AddForce(new Vector2(0f, jumpForce));
+                GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce));
 
                 // Play the jump sound
                 jumpAudio.Play();

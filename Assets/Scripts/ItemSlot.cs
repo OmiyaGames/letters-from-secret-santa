@@ -141,14 +141,14 @@ public class ItemSlot : MonoBehaviour
                 if(heldItem == null)
                 {
                     // Make the font label completely opaque
-                    renderer.enabled = true;
+                    GetComponent<Renderer>().enabled = true;
                     fontColor.a = 1;
                     slotLabel.color = fontColor;
                 }
                 else
                 {
                     // Don't show the label
-                    renderer.enabled = false;
+                    GetComponent<Renderer>().enabled = false;
                     fontColor.a = 0;
                     slotLabel.color = fontColor;
                 }
@@ -215,13 +215,13 @@ public class ItemSlot : MonoBehaviour
         if ((heldItem != null) && (animateItem == false))
         {
             // Turn off the mesh renderer
-            renderer.enabled = false;
+            GetComponent<Renderer>().enabled = false;
             timeFadeOutStarted = -1;
         }
         else
         {
             // Turn on the text mesh renderer
-            renderer.enabled = true;
+            GetComponent<Renderer>().enabled = true;
             timeFadeOutStarted = Time.time;
             if ((heldItem == null) && (animateItem == false))
             {
@@ -263,7 +263,7 @@ public class ItemSlot : MonoBehaviour
     void SetupCentralCollider()
     {
         // Resize the box collider
-        SetupTextPlatform.SetupCentralColliderStatic(CachedCollider, renderer, transform, padding, offset);
+        SetupTextPlatform.SetupCentralColliderStatic(CachedCollider, GetComponent<Renderer>(), transform, padding, offset);
         CachedCollider.isTrigger = true;
     }
 #endif

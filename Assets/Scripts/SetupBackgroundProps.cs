@@ -8,6 +8,6 @@ public class SetupBackgroundProps : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-        renderer.sortingLayerName = spriteLayer;
+        GetComponent<Renderer>().sortingLayerName = spriteLayer;
 	}
 }

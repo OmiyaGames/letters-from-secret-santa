@@ -44,7 +44,7 @@ public class SceneTransition : ISingletonScript
 
 	public override void SingletonStart(Singleton instance)
 	{
-		mTargetColor = guiTexture.color;
+		mTargetColor = GetComponent<GUITexture>().color;
         mTargetTextColor = text.color;
 
 		mTargetAlpha = 0;
@@ -53,10 +53,10 @@ public class SceneTransition : ISingletonScript
         mTargetColor.a = mTargetAlpha;
         mTargetTextColor.a = mTargetAlpha;
 		
-        guiTexture.color = mTargetColor;
+        GetComponent<GUITexture>().color = mTargetColor;
         text.color = mTargetTextColor;
 
-        guiTexture.enabled = false;
+        GetComponent<GUITexture>().enabled = false;
         text.enabled = false;
     }
 	
@@ -79,7 +79,7 @@ public class SceneTransition : ISingletonScript
 		if(/*(State == Transition.NotTransitioning) && */(levelIndex >= 0) && (levelIndex <= GameSettings.NumLevels))
 		{
 			// Play sound
-			audio.Play();
+			GetComponent<AudioSource>().Play();
 
 			// Set the next level
 			mNextLevel = levelIndex;
@@ -112,9 +112,9 @@ public class SceneTransition : ISingletonScript
 		{
 			case Transition.FadingIn:
 			{
-                if(guiTexture.enabled == false)
+                if(GetComponent<GUITexture>().enabled == false)
 				{
-					mTargetColor = guiTexture.color;
+					mTargetColor = GetComponent<GUITexture>().color;
                     mTargetTextColor = text.color;
 
 					mTargetAlpha = 1;
@@ -123,10 +123,10 @@ public class SceneTransition : ISingletonScript
                     mTargetColor.a = mTargetAlpha;
                     mTargetTextColor.a = mTargetAlpha;
 
-                    guiTexture.color = mTargetColor;
+                    GetComponent<GUITexture>().color = mTargetColor;
                     text.color = mTargetTextColor;
 
-					guiTexture.enabled = true;
+					GetComponent<GUITexture>().enabled = true;
                     text.enabled = true;
 				}
 				else
@@ -136,7 +136,7 @@ public class SceneTransition : ISingletonScript
                     mTargetColor.a = mCurrentAlpha;
                     mTargetTextColor.a = mCurrentAlpha;
 
-					guiTexture.color = mTargetColor;
+					GetComponent<GUITexture>().color = mTargetColor;
                     text.color = mTargetTextColor;
 				}
 				break;
@@ -148,13 +148,13 @@ public class SceneTransition : ISingletonScript
                 mTargetColor.a = mCurrentAlpha;
                 mTargetTextColor.a = mCurrentAlpha;
 
-				guiTexture.color = mTargetColor;
+				GetComponent<GUITexture>().color = mTargetColor;
                 text.color = mTargetTextColor;
 				break;
 			}
 			case Transition.CompletelyFaded:
 			{
-				mTargetColor = guiTexture.color;
+				mTargetColor = GetComponent<GUITexture>().color;
                 mTargetTextColor = text.color;
 
 				mTargetAlpha = 0;
@@ -163,18 +163,18 @@ public class SceneTransition : ISingletonScript
                 mTargetColor.a = mCurrentAlpha;
                 mTargetTextColor.a = mCurrentAlpha;
 
-                guiTexture.color = mTargetColor;
+                GetComponent<GUITexture>().color = mTargetColor;
                 text.color = mTargetTextColor;
 
-                guiTexture.enabled = true;
+                GetComponent<GUITexture>().enabled = true;
                 text.enabled = true;
 				break;
 			}
 			default:
 			{
-				if(guiTexture.enabled == true)
+				if(GetComponent<GUITexture>().enabled == true)
 				{
-					guiTexture.enabled = false;
+					GetComponent<GUITexture>().enabled = false;
 				}
                 if(text.enabled == true)
                 {
