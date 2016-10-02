@@ -1,0 +1,18 @@
+Main character + GUI art:
+By 1001.com
+http://opengameart.org/content/jimmy-jump-pack
+
+Licensed CC-BY-SA 4.0:
+https://creativecommons.org/licenses/by-sa/4.0
+
+
+
+GoKit Tween Library:
+https://github.com/prime31/GoKit
+
+
+
+Music:
+"Carefree" Kevin MacLeod (incompetech.com) 
+Licensed under Creative Commons: By Attribution 3.0
+http://creativecommons.org/licenses/by/3.0/
